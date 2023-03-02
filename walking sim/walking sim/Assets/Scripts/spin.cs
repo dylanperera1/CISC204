@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wallmover : MonoBehaviour
+public class spin : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -11,8 +11,8 @@ public class wallmover : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() 
+    void Update()
     {
-     transform.Rotate(0, 3.0f, 0);  
+        transform.Rotate(0, 3.0f, 0);  
     }
 }
