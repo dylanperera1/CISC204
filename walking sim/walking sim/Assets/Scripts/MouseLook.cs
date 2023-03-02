@@ -13,11 +13,13 @@ public class MouseLook : MonoBehaviour
 
     // Update is called once per frame
     public RotationAxes axes = RotationAxes.MouseXandY;
+    public float sensitivityHor = 9.0f;
 
     void Update()
     {
         if (axes == RotationAxes.MouseX)
         {
+            transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityHor, 0);
             // horizonatal rotation here
         }
         else if (axes == RotationAxes.MouseY)
