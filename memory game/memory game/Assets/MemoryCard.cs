@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class MemoryCard : MonoBehaviour
 {
+    [SerializeField] GameObject card_back;
+
+
     public void OnMouseDown()
     {
-        Debug.Log("testing 1 2 3");
+        if (card_back.activeSelf) {
+            card_back.SetActive(false);
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
