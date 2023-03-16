@@ -5,6 +5,11 @@ using UnityEngine;
 public class MemoryCard : MonoBehaviour
 {
     [SerializeField] GameObject card_back;
+    [SerializeField] Sprite image;
+    void Start()
+    {
+        GetComponent<SpriteRenderer>().sprite = image;
+    }
 
 
     public void OnMouseDown()
