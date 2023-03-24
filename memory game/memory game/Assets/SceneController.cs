@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SceneController : MonoBehaviour
@@ -10,10 +11,12 @@ public class SceneController : MonoBehaviour
     public const float offsetY = 2.5f;
 
 
+    [SerializeField] TMP_Text scoreLabel;
 
     [SerializeField] MemoryCard originalCard;
     [SerializeField] Sprite[] images;
     private int gridCols;
+
 
     void Start()
     {
@@ -76,14 +79,15 @@ public class SceneController : MonoBehaviour
         else
         {
             secondRevealed = card;
-            Debug.Log("Match? " + (firstRevealed.Id == secondRevealed.Id));
+            
             StartCoroutine(CheckMatch());
         }
     }
     private IEnumerator CheckMatch() {
+
         if (firstRevealed.Id == secondRevealed.Id) {
             score++;
-            Debug.Log($"Score: {score}");
+            scoreLabel.text = ($"Score: {score}");
         }
         else {
             yield return new WaitForSeconds(.5f);
@@ -95,9 +99,5 @@ public class SceneController : MonoBehaviour
         firstRevealed = null;
         secondRevealed = null;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
