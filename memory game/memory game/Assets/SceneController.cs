@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
-    public const int gridRows = 2;
-    public const int girdCols = 4;
+    public const int gridRows = 3;
+    public const int girdCols = 3;
     public const float offsetX = 2f;
     public const float offsetY = 2.5f;
 
@@ -79,7 +79,7 @@ public class SceneController : MonoBehaviour
         else
         {
             secondRevealed = card;
-            
+            Debug.Log("Match? " + (firstRevealed.Id == secondRevealed.Id));
             StartCoroutine(CheckMatch());
         }
     }
