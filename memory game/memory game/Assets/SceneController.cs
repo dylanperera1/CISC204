@@ -66,8 +66,34 @@ public class SceneController : MonoBehaviour
         get { return secondRevealed == null;}
     }
 
-    public void CardRevealed(MemoryCard card) {
-        //initally empty
+    private int score = 0;
+    public void CardRevealed(MemoryCard card)
+    {
+        if (firstRevealed == null)
+        {
+            firstRevealed = card;
+        }
+        else
+        {
+            secondRevealed = card;
+            Debug.Log("Match? " + (firstRevealed.Id == secondRevealed.Id));
+            StartCoroutine(CheckMatch());
+        }
+    }
+    private IEnumerator CheckMatch() {
+        if (firstRevealed.Id == secondRevealed.Id) {
+            score++;
+            Debug.Log($"Score: {score}");
+        }
+        else {
+            yield return new WaitForSeconds(.5f);
+
+            firstRevealed.Unreveal();
+            secondRevealed.Unreveal();
+        }
+
+        firstRevealed = null;
+        secondRevealed = null;
     }
     // Update is called once per frame
     void Update()
