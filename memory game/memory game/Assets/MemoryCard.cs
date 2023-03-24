@@ -7,6 +7,12 @@ public class MemoryCard : MonoBehaviour
     [SerializeField] GameObject card_back;
     [SerializeField] SceneController controller;
 
+public void OnMouseDown()
+    {
+        if (card_back.activeSelf) {
+            card_back.SetActive(false);
+        }
+    }
     private int _id;
     public int Id
     {
@@ -20,12 +26,7 @@ public class MemoryCard : MonoBehaviour
     }
 
 
-    public void OnMouseDown()
-    {
-        if (card_back.activeSelf) {
-            card_back.SetActive(false);
-        }
-    }
+   
 
     // Update is called once per frame
     void Update()
