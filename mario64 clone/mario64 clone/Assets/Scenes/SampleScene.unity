@@ -929,6 +929,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 2e73db118071a4010a6ff1f631914cc9, type: 2}
     - target: {fileID: 5866666021909216657, guid: 749cc61ed816c4a4386af9c91992965b, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 749cc61ed816c4a4386af9c91992965b, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
@@ -2062,6 +2066,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2e73db118071a4010a6ff1f631914cc9, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 749cc61ed816c4a4386af9c91992965b, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 749cc61ed816c4a4386af9c91992965b, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
