@@ -10,7 +10,10 @@ public class DeviceTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
+        if (requireKey && Managers.Inventory.equippedItem != "key")
+        {
+            return;
+        }
         foreach (GameObject target in targets)
         {
             target.SendMessage("Activate");
