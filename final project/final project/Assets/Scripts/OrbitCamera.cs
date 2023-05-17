@@ -8,7 +8,7 @@ public class OrbitCamera : MonoBehaviour
 {
     [SerializeField] Transform target;
 
-    public float rotSpeed = 1.5f;
+    public float rotSpeed = 15f;
 
     private float rotY;
     private Vector3 offset;

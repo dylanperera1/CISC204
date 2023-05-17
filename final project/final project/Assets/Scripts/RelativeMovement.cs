@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 3rd-person movement that picks direction relative to target (usually the camera)
+// commented lines demonstrate snap to direction and without ground raycast
+//
+// To setup animated character create an animation controller with states for idle, running, jumping
+// transition between idle and running based on added Speed float, set those not atomic so that they can be overridden by...
+// transition both idle and running to jump based on added Jumping boolean, transition back to idle
+
 [RequireComponent(typeof(CharacterController))]
 public class RelativeMovement : MonoBehaviour
 {
@@ -37,6 +44,7 @@ public class RelativeMovement : MonoBehaviour
         // start with zero and add movement components progressively
         Vector3 movement = Vector3.zero;
 
+        // x z movement transformed relative to target
         float horInput = Input.GetAxis("Horizontal");
         float vertInput = Input.GetAxis("Vertical");
         if (horInput != 0 || vertInput != 0)
@@ -50,7 +58,7 @@ public class RelativeMovement : MonoBehaviour
             movement = Vector3.ClampMagnitude(movement, moveSpeed);
 
             // face movement direction
-            //transform.rotation = Quaternion.LookRotation(movement); // to face immediately
+            //transform.rotation = Quaternion.LookRotation(movement);
             Quaternion direction = Quaternion.LookRotation(movement);
             transform.rotation = Quaternion.Lerp(transform.rotation,
                                                  direction, rotSpeed * Time.deltaTime);
@@ -123,3 +131,4 @@ public class RelativeMovement : MonoBehaviour
         }
     }
 }
+
